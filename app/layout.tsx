@@ -6,6 +6,7 @@ import { personalInfo } from "@/data/portfolio";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://louiesarraga.dev"),
   title: `${personalInfo.name} — Portfolio`,
   description: personalInfo.bio,
   openGraph: {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     images: [{ url: "/avatar.jpg", width: 256, height: 256, alt: personalInfo.name }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${personalInfo.name} — Full Stack Software Engineer`,
     description: personalInfo.bio,
     images: ["/avatar.jpg"],
