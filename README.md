@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Louie Jay Sarraga — Portfolio
+
+Personal portfolio website for Louie Jay Sarraga, a Full Stack Software Engineer based in the Philippines.
+
+## Tech Stack
+
+- **Framework:** Next.js (React 19)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+
+## Features
+
+- Responsive single-page design with dark theme
+- Animated sections with scroll-triggered reveals
+- Projects showcase with live demo and GitHub links
+- Work experience timeline populated from CV
+- Skills organized by category
+- Contact section with email, GitHub, and LinkedIn links
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio/
+├── app/            # Next.js app router (layout, page, globals)
+├── components/     # UI sections (Navbar, Hero, About, Skills, Projects, Experience, Contact)
+├── data/           # Centralized content (portfolio.ts)
+└── public/         # Static assets (avatar, icons)
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+All content (personal info, skills, projects, experience) is managed in a single file:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+data/portfolio.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Deployed on **AWS Amplify**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Build command: `npm run build`
+- Output directory: `.next`
+- Node version: 20
