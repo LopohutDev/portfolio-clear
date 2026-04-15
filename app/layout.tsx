@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${personalInfo.name} — Full Stack Software Engineer`,
     description: personalInfo.bio,
+    url: "https://louiejaysarraga.online",
     type: "website",
     images: [{ url: "/avatar.jpg", width: 256, height: 256, alt: personalInfo.name }],
   },
