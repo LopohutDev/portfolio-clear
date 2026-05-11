@@ -60,6 +60,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "SAgy_qhx0R2mgPU",
+  },
 };
 
 export default function RootLayout({
@@ -69,7 +72,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-gray-900 text-gray-100 antialiased min-h-full flex flex-col`}>
+      <body
+        className={`${inter.className} bg-gray-900 text-gray-100 antialiased min-h-full flex flex-col`}
+      >
         {children}
       </body>
     </html>
