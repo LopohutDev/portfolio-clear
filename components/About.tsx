@@ -1,36 +1,23 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { MapPin, Mail } from "lucide-react";
 import Image from "next/image";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { personalInfo } from "@/data/portfolio";
+import FadeIn from "@/components/FadeIn";
 
 export default function About() {
   return (
     <section id="about" className="py-24 bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <FadeIn className="mb-16">
           <p className="text-blue-400 font-mono text-sm mb-2">// about me</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
             Who I Am
           </h2>
-        </motion.div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Avatar placeholder */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center"
-          >
+          {/* Avatar */}
+          <FadeIn direction="right" className="flex justify-center">
             <div className="relative">
               <div className="w-64 h-64 rounded-2xl overflow-hidden border border-blue-500/20">
                 <Image
@@ -41,35 +28,29 @@ export default function About() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              {/* Decorative corner accent */}
               <div className="absolute -bottom-4 -right-4 w-64 h-64 rounded-2xl border border-blue-500/20 -z-10" />
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-6"
-          >
+          <FadeIn direction="left" delay={0.1} className="space-y-6">
             <p className="text-gray-400 text-lg leading-relaxed">
               {personalInfo.bio}
             </p>
             <p className="text-gray-500 leading-relaxed">
-              When I&apos;m not coding, I enjoy exploring new technologies, contributing
-              to open source, and continuously leveling up my skills. I&apos;m always
-              open to new opportunities and exciting projects.
+              When I&apos;m not coding, I enjoy exploring new technologies,
+              contributing to open source, and continuously leveling up my
+              skills. I&apos;m always open to new opportunities and exciting
+              projects.
             </p>
 
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin size={16} className="text-blue-400 flex-shrink-0" />
+                <MapPin size={16} className="text-blue-400 shrink-0" />
                 <span>{personalInfo.location}</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <Mail size={16} className="text-blue-400 flex-shrink-0" />
+                <Mail size={16} className="text-blue-400 shrink-0" />
                 <a
                   href={`mailto:${personalInfo.email}`}
                   className="hover:text-blue-400 transition-colors"
@@ -78,7 +59,7 @@ export default function About() {
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <GithubIcon size={16} className="text-blue-400 flex-shrink-0" />
+                <GithubIcon size={16} className="text-blue-400 shrink-0" />
                 <a
                   href={personalInfo.github}
                   target="_blank"
@@ -89,7 +70,7 @@ export default function About() {
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <LinkedinIcon size={16} className="text-blue-400 flex-shrink-0" />
+                <LinkedinIcon size={16} className="text-blue-400 shrink-0" />
                 <a
                   href={personalInfo.linkedin}
                   target="_blank"
@@ -109,7 +90,7 @@ export default function About() {
                 Get In Touch
               </a>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

@@ -1,9 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ExternalLink, Star, Lock, Zap } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { projects } from "@/data/portfolio";
+import FadeIn from "@/components/FadeIn";
 
 export default function Projects() {
   const featured = projects.filter((p) => p.featured);
@@ -12,13 +10,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
+        <FadeIn className="mb-16">
           <p className="text-blue-400 font-mono text-sm mb-2">// projects</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What I&apos;ve Built
@@ -27,17 +19,15 @@ export default function Projects() {
             A selection of my projects — each one built to solve a real problem.
             Click the links to explore.
           </p>
-        </motion.div>
+        </FadeIn>
 
         {/* Featured Projects */}
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           {featured.map((project, idx) => (
-            <motion.div
+            <FadeIn
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              delay={idx * 0.1}
+              duration={0.5}
               className="group bg-gray-950 border border-gray-800 rounded-2xl p-7 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 flex flex-col"
             >
               {/* Top row */}
@@ -112,14 +102,20 @@ export default function Projects() {
                     Live Demo
                   </a>
                 ) : (
-                  <span className="flex items-center gap-1.5 text-sm text-gray-600 font-medium cursor-default" title="Internal application — no public demo available">
+                  <span
+                    className="flex items-center gap-1.5 text-sm text-gray-600 font-medium cursor-default"
+                    title="Internal application — no public demo available"
+                  >
                     <Lock size={14} />
                     Internal App
                   </span>
                 )}
-                {project.githubUrl && (
-                  project.privateRepo ? (
-                    <span className="flex items-center gap-1.5 text-sm text-yellow-600 font-medium cursor-default" title="This repository is private">
+                {project.githubUrl &&
+                  (project.privateRepo ? (
+                    <span
+                      className="flex items-center gap-1.5 text-sm text-yellow-600 font-medium cursor-default"
+                      title="This repository is private"
+                    >
                       <Lock size={14} />
                       Private Repo
                     </span>
@@ -133,10 +129,9 @@ export default function Projects() {
                       <GithubIcon size={14} />
                       Source Code
                     </a>
-                  )
-                )}
+                  ))}
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
 
@@ -144,12 +139,10 @@ export default function Projects() {
         {others.length > 0 && (
           <div className="grid md:grid-cols-3 gap-5">
             {others.map((project, idx) => (
-              <motion.div
+              <FadeIn
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                delay={idx * 0.1}
+                duration={0.4}
                 className="group bg-gray-950 border border-gray-800 rounded-xl p-5 hover:border-blue-500/30 transition-all duration-300 flex flex-col"
               >
                 <div className="flex justify-between items-start mb-3">
@@ -157,9 +150,12 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <div className="flex gap-2 items-center">
-                    {project.githubUrl && (
-                      project.privateRepo ? (
-                        <span className="flex items-center gap-1 text-xs text-yellow-600 font-medium cursor-default" title="This repository is private">
+                    {project.githubUrl &&
+                      (project.privateRepo ? (
+                        <span
+                          className="flex items-center gap-1 text-xs text-yellow-600 font-medium cursor-default"
+                          title="This repository is private"
+                        >
                           <Lock size={13} />
                           Private
                         </span>
@@ -172,8 +168,7 @@ export default function Projects() {
                         >
                           <GithubIcon size={16} />
                         </a>
-                      )
-                    )}
+                      ))}
                     <a
                       href={project.liveUrl}
                       target="_blank"
@@ -197,7 +192,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </motion.div>
+              </FadeIn>
             ))}
           </div>
         )}

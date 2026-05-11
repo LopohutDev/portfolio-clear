@@ -4,64 +4,54 @@ import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { personalInfo } from "@/data/portfolio";
+import FadeIn from "@/components/FadeIn";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       {/* Background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-size-[60px_60px]" />
 
       {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm px-4 py-1.5 rounded-full mb-6"
-        >
-          <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-          Available for work
-        </motion.div>
+        <FadeIn mode="mount" delay={0} className="mb-6 flex justify-center">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm px-4 py-1.5 rounded-full">
+            <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+            Available for work
+          </div>
+        </FadeIn>
 
         {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4"
-        >
-          Hi, I&apos;m{" "}
-          <span className="text-blue-400">{personalInfo.name.split(" ")[0]}</span>
-        </motion.h1>
+        <FadeIn mode="mount" delay={0.1} className="mb-4">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
+            Hi, I&apos;m{" "}
+            <span className="text-blue-400">
+              {personalInfo.name.split(" ")[0]}
+            </span>
+          </h1>
+        </FadeIn>
 
         {/* Title */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl md:text-2xl text-gray-400 font-medium mb-6"
-        >
-          {personalInfo.title}
-        </motion.p>
+        <FadeIn mode="mount" delay={0.2} className="mb-6">
+          <p className="text-xl md:text-2xl text-gray-400 font-medium">
+            {personalInfo.title}
+          </p>
+        </FadeIn>
 
         {/* Bio */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
-          {personalInfo.bio}
-        </motion.p>
+        <FadeIn mode="mount" delay={0.3} className="mb-10">
+          <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            {personalInfo.bio}
+          </p>
+        </FadeIn>
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+        <FadeIn
+          mode="mount"
+          delay={0.4}
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
           <a
@@ -76,13 +66,12 @@ export default function Hero() {
           >
             Contact Me
           </a>
-        </motion.div>
+        </FadeIn>
 
         {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+        <FadeIn
+          mode="mount"
+          delay={0.5}
           className="flex items-center justify-center gap-5"
         >
           <a
@@ -110,7 +99,7 @@ export default function Hero() {
           >
             <Mail size={22} />
           </a>
-        </motion.div>
+        </FadeIn>
       </div>
 
       {/* Scroll indicator */}
