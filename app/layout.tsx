@@ -7,20 +7,58 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://louiejaysarraga.online"),
-  title: `${personalInfo.name} — Portfolio`,
+  title: `${personalInfo.name} | Senior Full Stack Developer — React, Next.js, Node.js`,
   description: personalInfo.bio,
+  keywords: [
+    "Full Stack Developer Philippines",
+    "Senior Full Stack Developer",
+    "React Developer Philippines",
+    "Next.js Developer",
+    "Node.js Developer",
+    "NestJS Developer",
+    "TypeScript Developer",
+    "Remote Full Stack Developer",
+    "Louie Sarraga",
+    "Louie Jay Sarraga",
+    "Web Developer Philippines",
+  ],
+  authors: [{ name: personalInfo.name, url: "https://louiejaysarraga.online" }],
+  creator: personalInfo.name,
+  alternates: {
+    canonical: "https://louiejaysarraga.online",
+  },
   openGraph: {
-    title: `${personalInfo.name} — Full Stack Software Engineer`,
+    title: `${personalInfo.name} | Senior Full Stack Developer — React, Next.js, Node.js`,
     description: personalInfo.bio,
     url: "https://louiejaysarraga.online",
+    siteName: `${personalInfo.name} — Portfolio`,
     type: "website",
-    images: [{ url: "/avatar.jpg", width: 256, height: 256, alt: personalInfo.name }],
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${personalInfo.name} — Senior Full Stack Developer`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${personalInfo.name} — Full Stack Software Engineer`,
+    title: `${personalInfo.name} | Senior Full Stack Developer — React, Next.js, Node.js`,
     description: personalInfo.bio,
-    images: ["/avatar.jpg"],
+    images: ["/og-image.jpg"],
+    creator: "@louiejaysarraga",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

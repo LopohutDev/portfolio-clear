@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Louie Sarraga",
   title: "Full Stack Software Engineer",
-  bio: "I build fast, scalable, and beautiful web applications. Passionate about clean code, great user experiences, and solving real-world problems with technology.",
+  bio: "Senior Full Stack Developer based in the Philippines with 5+ years of experience building production web applications using React, Next.js, Node.js, and NestJS — for clients in the US and Southeast Asia.",
   email: "johnlouie.sarraga@gmail.com",
   github: "https://github.com/LopohutDev",
   linkedin: "https://www.linkedin.com/in/louie-jay-sarraga-8a941a155/",
